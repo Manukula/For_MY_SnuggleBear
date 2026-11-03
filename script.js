@@ -10,7 +10,9 @@ function startMusic() {
 }
 
 window.addEventListener('load', function () {
-  startMusic();
+  setTimeout(function () {
+    startMusic();
+  }, 5000);
 
   document.body.addEventListener('pointerdown', startMusic, { once: true });
   document.body.addEventListener('keydown', startMusic, { once: true });
@@ -32,6 +34,10 @@ function moveRandomEl(elm) {
 const moveRandom = document.querySelector('#move-random');
 
 if (moveRandom) {
+  moveRandom.style.position = 'relative';
+  moveRandom.style.left = '0';
+  moveRandom.style.top = '0';
+
   moveRandom.addEventListener('mouseenter', function (event) {
     moveRandomEl(event.target);
   });
